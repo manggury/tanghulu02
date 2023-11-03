@@ -37,6 +37,11 @@
     border-bottom: 1px solid rgba(225, 250, 250, 0.3);
 }
 
+.Header.on {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .header_wrap {
     display: flex;
     justify-content: space-between;
@@ -52,6 +57,11 @@
     padding: 0 24px;
     font-size: 20px;
     color: #fff;
+}
+
+
+.Header.on .gnb>ul>li>a {
+    color: #000;
 }
 
 .gnb>ul>li {
@@ -94,9 +104,13 @@
     margin: 0 4px;
 }
 
+.Header.on .utils a {
+    color: #000;
+}
+
 .MainVisual .Visualslide .itm {
     position: relative;
-    height: 100vh;
+    height: 700px;
 }
 
 .MainVisual .Visualslide .itm::before {
@@ -145,6 +159,44 @@
     text-shadow: 0 0 1px #000;
     color: #fff;
     line-height: 22px;
+}
+
+.MainVisual .Visualslide .slick-dots {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.MainVisual .Visualslide .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 4px;
+    background: #fff;
+    margin: 0 10px 0 0;
+    border-radius: 2px;
+}
+
+.MainVisual .Visualslide .slick-dots li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #f00;
+}
+
+.MainVisual .Visualslide .slick-dots li.slick-active::after {
+    width: 100%;
+    transition: 3s;
+}
+
+.MainVisual .Visualslide .slick-dots li button {
+    display: none;
 }
 
 .MainFrancuise .inner {
@@ -215,7 +267,6 @@
     text-overflow: 0 0 2px #000;
 }
 
-.MainFranChiseOrder {}
 
 .MainFranChiseOrder .inner {
     display: grid;
@@ -327,4 +378,30 @@
 .Footer .customer .tel span {
     font-size: 32px;
     font-weight: 900;
+}
+
+.totop {
+    position: fixed;
+    bottom: 100px;
+    right: -100px;
+    background: transparent;
+    border: none;
+
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.totop.on {
+    right: 100px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.totop i {
+    padding: 16px;
+    background: #f00;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
 }
